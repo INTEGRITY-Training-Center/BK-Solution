@@ -20,7 +20,7 @@
             src: url('../lib/Pyidaungsu-2.5_Regular.ttf') format('truetype');
         }
 
-        .catlist{font-family:'phs' !important;}
+        .catlist, .account-box h4 span{font-family:'phs' !important;}
 
         .bg-accpunt-pages{
             background: linear-gradient(to left, #a644e4, #56c8b8);
@@ -98,10 +98,10 @@
                                 <div class="account-logo-box hv" style="padding: 18px 30px 7px 13px;  ">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
-                                               New Category
+                                            <h4 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
+                                              <span>အမျိုးအစား သတ်မှတ်ခြင်း</span> 
                                                 
-                                            </h5>
+                                            </h4>
                                             
                                         </div>
                                         <div class="col-2 text-right" id="minimixer" > 
@@ -186,10 +186,10 @@
                                 <div class="account-logo-box phv" style="padding: 18px 30px 7px 13px;  ">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
-                                               Categories & Create Products
+                                            <h4 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
+                                               <span>ရောင်းကုန်သတ်မှတ်ခြင်း </span>
                                                 
-                                            </h5>
+                                            </h4>
                                             
                                         </div>
                                         <div class="col-2 text-right" id="" > 
