@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{043D00DB-50CF-4D91-BDCB-AD929787522E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ygMerceInfo</RootNamespace>
+    <AssemblyName>ygMerceInfo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BKCustomerInfo.cs" />
+    <Compile Include="brandinfoinfo.cs" />
+    <Compile Include="Categoryinfo.cs" />
+    <Compile Include="Cell_Priceinfoinfo.cs" />
+    <Compile Include="Cell_Price_Historyinfo.cs" />
+    <Compile Include="Cityinfo.cs" />
+    <Compile Include="Countryinfo.cs" />
+    <Compile Include="Customerinfo.cs" />
+    <Compile Include="Inventoryinfo.cs" />
+    <Compile Include="inventory_history_info.cs" />
+    <Compile Include="invoice_historyinfo.cs" />
+    <Compile Include="invoice_info.cs" />
+    <Compile Include="PersonInfo.cs" />
+    <Compile Include="Productinfo.cs" />
+    <Compile Include="Product_historyinfo.cs" />
+    <Compile Include="product_imageinfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchaseinfo.cs" />
+    <Compile Include="Quarterinfo.cs" />
+    <Compile Include="Regioninfo.cs" />
+    <Compile Include="RegisterInfo.cs" />
+    <Compile Include="ReorderInfo.cs" />
+    <Compile Include="StateInfo.cs" />
+    <Compile Include="SubCategoryInfo.cs" />
+    <Compile Include="SupplierInfo.cs" />
+    <Compile Include="TownshipInfo.cs" />
+    <Compile Include="UnitOfMeasureInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

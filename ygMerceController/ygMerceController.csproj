@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59B4CA22-542D-4C3C-A22B-21BF65F7CE78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ygMerceController</RootNamespace>
+    <AssemblyName>ygMerceController</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BKCustomerController.cs" />
+    <Compile Include="BrandController.cs" />
+    <Compile Include="CategoryController.cs" />
+    <Compile Include="Cell_PriceController.cs" />
+    <Compile Include="Cell_Price_HistoryController.cs" />
+    <Compile Include="CityController.cs" />
+    <Compile Include="CountryController.cs" />
+    <Compile Include="CustomerController.cs" />
+    <Compile Include="Inventory_HistoryController.cs" />
+    <Compile Include="Invertorycontroller.cs" />
+    <Compile Include="InvoiceController.cs" />
+    <Compile Include="InvoiceHistoryController.cs" />
+    <Compile Include="PersonController.cs" />
+    <Compile Include="ProductController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductHistoryController.cs" />
+    <Compile Include="ProductImageController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseController.cs" />
+    <Compile Include="QuarterController.cs" />
+    <Compile Include="RegionController.cs" />
+    <Compile Include="RegisterController.cs" />
+    <Compile Include="ReorderController.cs" />
+    <Compile Include="StateController.cs" />
+    <Compile Include="SubCategoryController.cs" />
+    <Compile Include="SupplierController.cs" />
+    <Compile Include="TownshipController.cs" />
+    <Compile Include="UnitOfMeasureController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ygMerceDAO\ygMerceDAO.csproj">
+      <Project>{9146f46d-ff4e-4cd3-bc31-e541bd8a43c0}</Project>
+      <Name>ygMerceDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ygMerceInfo\ygMerceInfo.csproj">
+      <Project>{043d00db-50cf-4d91-bdcb-ad929787522e}</Project>
+      <Name>ygMerceInfo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

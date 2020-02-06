@@ -1,0 +1,27 @@
+﻿* {
+    font-family: "Times New Roman", sans-serif;
+    box-sizing: border-box;
+    padding: 0;margin: 0;
+        }
+.header,.footer {
+    color: White;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+}
+.content {
+    background: #ddd;
+    color: gray;
+    padding: 10px;
+}
+.footer {
+    padding-top: 30px;
+}
+h1, h2 {
+    padding: 10px;
+}
+.overflow {
+     height: 250px;
+     overflow: scroll;
+     border: 3px navy solid;
+}

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 18" name="RMS">
+  <DataContextMoniker Name="/RMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d723c170-3906-4e53-bc05-2071ac5e5e16" absoluteBounds="0.75, 0.75, 2, 2.3687767511606217">
+      <DataClassMoniker Name="/RMSDataContext/BKCustomer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b6e544c-1e71-444b-b239-fb4918270fb5" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.8087767511606216" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76cfb60a-f576-45e8-9022-bd104631f400" absoluteBounds="3.75, 0.75, 2, 1.1368839170535408">
+      <DataClassMoniker Name="/RMSDataContext/UnitOfMeasure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63f4253e-0d6a-4fa3-96b5-0dc3b0c71397" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.57688391705354047" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="735ed690-b7fc-4ea3-8e22-8c8ec7d180e1" absoluteBounds="3.75, 2.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/brand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e671a47-a2b7-49bb-b609-d15c8ba0bc64" absoluteBounds="3.765, 3.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddc7d04c-e643-4070-acd6-6b0e97805268" absoluteBounds="3.75, 5.75, 2, 2.01680736998717">
+      <DataClassMoniker Name="/RMSDataContext/Cell_Price" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f98ee7cf-daf2-4e74-95af-09f3e7e70b0b" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.4568073699871698" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="174418b9-f92f-4004-b475-c426c380da25" absoluteBounds="6.75, 0.75, 2, 1.6648379888137177">
+      <DataClassMoniker Name="/RMSDataContext/Cell_Price_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f170506-4f4a-4bef-a16a-6d9c65c1ac8b" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.1048379888137181" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="201ea64f-3472-4455-b30e-f34e619c7e89" absoluteBounds="6.75, 3.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff268f39-5533-4d1b-bc1e-1f92c2010f82" absoluteBounds="6.765, 4.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee8dd550-20e8-4348-95da-f3ebf6a63664" absoluteBounds="6.75, 6.75, 2, 1.6648379888137175">
+      <DataClassMoniker Name="/RMSDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d366fd8-58f8-42ae-8088-89a6b24591c6" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.1048379888137181" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="234ef878-0699-41df-82e6-010812e5fde1" absoluteBounds="0.75, 8.75, 2, 2.1927920605738969">
+      <DataClassMoniker Name="/RMSDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1c09672-a44e-45c1-890a-9ba0717e8ae4" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.6327920605738959" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="797d4844-7d39-48de-98b7-abf5aba6c76e" absoluteBounds="9.75, 0.75, 2, 1.6648379888137177">
+      <DataClassMoniker Name="/RMSDataContext/inventory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="457e054e-7996-49f5-beee-a432207b9af2" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.1048379888137181" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c606e856-1d0a-47ab-8efe-ac0f5e22c9a8" absoluteBounds="9.75, 3.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/inventory_history" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8f8bc75-fa26-4f48-8404-9433948dc1c6" absoluteBounds="9.765, 4.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20ba589e-b83f-4f16-9032-5e08d1b172f5" absoluteBounds="3.75, 9.75, 2, 1.8408226794004428">
+      <DataClassMoniker Name="/RMSDataContext/Invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc77666d-4b18-4cca-8382-4409a119fd06" absoluteBounds="3.765, 10.21, 1.9700000000000002, 1.280822679400444" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9daaa0b9-24ec-40bb-8d5d-608d7a36e713" absoluteBounds="9.75, 6.75, 2, 1.8408226794004445">
+      <DataClassMoniker Name="/RMSDataContext/Invoice_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46a2cbc8-e0bc-4677-8eb5-7ec2a8f0e4df" absoluteBounds="9.765, 7.21, 1.9700000000000002, 1.280822679400444" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c46f6b34-631b-4ab4-9f80-22e09bdc0e63" absoluteBounds="6.75, 9.75, 2, 1.6648379888137193">
+      <DataClassMoniker Name="/RMSDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="454c3550-013e-43f1-a14d-81284ee5484b" absoluteBounds="6.765, 10.21, 1.9700000000000002, 1.1048379888137181" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2a3901e-63a5-496a-932e-1402ec138a32" absoluteBounds="9.75, 9.75, 2, 3.4246848946809791">
+      <DataClassMoniker Name="/RMSDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a3b8cba-2984-4792-a98c-55c2fbf7d83f" absoluteBounds="9.765, 10.21, 1.9700000000000002, 2.8646848946809769" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef762af0-c154-42c2-b467-0e35e36ab198" absoluteBounds="12.75, 0.75, 2, 3.4246848946809774">
+      <DataClassMoniker Name="/RMSDataContext/product_history" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1472e25b-8a42-4da2-b20f-97cbc011def2" absoluteBounds="12.765, 1.21, 1.9700000000000002, 2.8646848946809769" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9cb6b78c-5441-4c6b-8012-094db6bac809" absoluteBounds="0.75, 12.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/product_image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="184242c4-2516-43b0-8389-dbac301af94f" absoluteBounds="0.765, 13.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d7d75e20-1bc5-4670-bd4c-0cd85c5e63ce" absoluteBounds="3.75, 12.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/product_image1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d0d2216e-2f28-4e23-bfd2-4259e39e3a58" absoluteBounds="3.765, 13.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cac5f71c-573d-4a1c-8775-6f41a11b969a" absoluteBounds="12.75, 5.75, 2, 1.8408226794004445">
+      <DataClassMoniker Name="/RMSDataContext/Purchase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68d2125c-05ec-4e6d-bc0f-d36d7e3254b9" absoluteBounds="12.765, 6.21, 1.9700000000000002, 1.280822679400444" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8032d560-f9eb-43d5-9a61-4c60ecc631d4" absoluteBounds="12.75, 8.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/Quarter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="905e752a-2c77-4736-81a7-3a3a86776f7c" absoluteBounds="12.765, 9.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c5db065-4802-4f3f-93c2-1aab65776801" absoluteBounds="12.75, 11.75, 2, 1.3128686076402651">
+      <DataClassMoniker Name="/RMSDataContext/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fa0470b-58b9-4fea-9ca1-954d2c533fc1" absoluteBounds="12.765, 12.21, 1.9700000000000002, 0.75286860764026642" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42384cda-db97-463c-9cbb-9172087c5ed0" absoluteBounds="6.75, 14.75, 2, 2.8967308229208015">
+      <DataClassMoniker Name="/RMSDataContext/Register" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4dbaaf1c-a7af-49be-a8a5-674fdfa9f0d2" absoluteBounds="6.765, 15.21, 1.9700000000000002, 2.3367308229207993" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7f3160a-1689-4813-98e4-b1371cf51f0f" absoluteBounds="9.75, 14.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/Reorder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77f1d70b-ab27-4ccb-b058-18017e16639c" absoluteBounds="9.765, 15.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7224bdb4-218c-42f3-8f17-2ece927423bc" absoluteBounds="12.75, 14.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/State" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6adcc000-955b-47d9-b5f3-e30f4fd238ea" absoluteBounds="12.765, 15.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ade6b73d-ce38-414e-8cd5-be31e840747b" absoluteBounds="15.75, 0.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/SubCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="151864b1-0f1a-445b-8071-776680684be3" absoluteBounds="15.765, 1.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff3e4b4e-f92d-4981-9ac7-a45c59199b68" absoluteBounds="0.75, 15.75, 2, 2.01680736998717">
+      <DataClassMoniker Name="/RMSDataContext/Supplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04129f1c-fc16-40f1-9dcc-d396b0dbea48" absoluteBounds="0.765, 16.21, 1.9700000000000002, 1.4568073699871698" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="701502db-2350-4d79-8563-5c24e2daaf72" absoluteBounds="15.75, 3.75, 2, 1.4888532982269922">
+      <DataClassMoniker Name="/RMSDataContext/Township" />
+      <nestedChildShapes>
+        <elementListCompartment Id="811bae51-55a9-4fac-8040-0a881e64b0e8" absoluteBounds="15.765, 4.21, 1.9700000000000002, 0.92885329822699236" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1052cbb7-0a58-4ae4-a223-1b7ddd754427" absoluteBounds="1, 5.25, 2, 1.3128686076402665">
+      <DataClassMoniker Name="/RMSDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="596c4da8-b46e-4698-876f-f59319f71122" absoluteBounds="1.0149999999999997, 5.71, 1.9700000000000002, 0.75286860764026642" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

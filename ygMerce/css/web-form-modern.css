@@ -1,0 +1,69 @@
+/*
+|----------------------------------------------------------------------------
+	Web Form - Multi Purpose HTML Form with jQuery Validation Main CSS
+	Author: MGScoder
+	Author URL: https://codecanyon.net/user/mgscoder
+	Version: 1.2
+|----------------------------------------------------------------------------
+*/
+.webform .form-control, #mc-form .form-control {
+    background-color: #e8eaed;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+}
+#mc-form .form-control {
+    border-radius: 30px 0 0 30px;
+}
+#mc-form .btn {
+    border-radius: 0 30px 30px 0;
+}	
+.webform textarea.form-control {
+    border-radius: 10px;
+}
+.webform .form-control:focus, #mc-form .form-control:focus {
+    box-shadow: 0 1px 1px rgba(190, 194, 203, 0.075) inset, 0 0 10px rgba(190, 194, 203, 0.7);
+}
+.webform .form-control:valid ~ .form-label, .webform .form-control:focus ~ .form-label,
+#mc-form .form-control:valid ~ .form-label, #mc-form .form-control:focus ~ .form-label {
+	background-color: #fb9902;
+    top: -24px;
+    padding: 2px 10px;
+    border-radius: 30px;
+}
+.webform textarea.form-control:valid ~ .form-label, .webform textarea.form-control:focus ~ .form-label {
+    top: -24px;
+}
+#submitButtonHolder .btn.btn-custom {
+    border-radius: 30px;
+	border-color: #fb9902;
+	background-color: #fb9902;
+}
+.webform .form-group .input-group-icon {
+    color: rgba(251, 153, 2, .9);
+}
+
+/*select box*/
+.webform select {
+	background-image: linear-gradient(45deg, transparent 50%, #fb9902 50%),
+		linear-gradient(135deg, #fb9902 50%, transparent 50%),
+		radial-gradient(transparent 66%, transparent 66%);
+}
+.webform select:focus {
+	background-image: linear-gradient(45deg, transparent 50%, #fb9902 50%),
+		linear-gradient(135deg, #fb9902 50%, transparent 50%),
+		radial-gradient(transparent 66%, transparent 66%);
+}
+
+.webform .input-group-btn ~ .form-control {
+    border-radius: 0 30px 30px 0;
+}
+.webform .input-group-btn > .btn {
+    border-radius: 30px 0 0 30px;
+	background-color: #fb9902;
+	border: 1px solid #fb9902;
+}
+.webform .mgs-checkbox :checked + label, .mgs-radio :checked + label,
+.webform .mgs-checkbox label:hover, .mgs-radio label:hover {
+    border-color: #fb9902;
+    background-color: #fb9902;
+}
