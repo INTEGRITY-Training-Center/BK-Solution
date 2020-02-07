@@ -74,7 +74,7 @@ namespace ygMerce.Admin
         {
             var txt = new HtmlAnchor { ID = string.Concat("aButton", index) };
             txt.Style.Add("display", "block");
-            txt.Attributes.Add("class", "addtextbox col-1 float-left");
+            txt.Attributes.Add("class", "addtextbox col-1 float-left mr-2");
             //txt.Attributes.Add("onserverclick", "btnAddTextBox_Click");
             txt.HRef = "javascript:__doPostBack('aButton','')";
             
@@ -262,7 +262,8 @@ namespace ygMerce.Admin
 
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", msg, true);
                 removecontrol();
-
+                rptMainList.DataSource = con.SelectAllCategoryInfo();
+                rptMainList.DataBind();
             }
             removecontrol();
 

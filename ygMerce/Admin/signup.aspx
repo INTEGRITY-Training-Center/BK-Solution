@@ -91,7 +91,7 @@
         }
         a i.fa-plus-square, a i.fa-window-close{
             color:white;
-            font-size:1.3em;
+            font-size:1.5em;
             vertical-align: -webkit-baseline-middle;
         }
         a i.fa-plus-square:hover{
@@ -101,8 +101,11 @@
             a i.fa-window-close:hover {
                 color:red;
             }
+             a #ifa{
+                color:gray;
+            }
             a #ifa:hover{
-                color:transparent;
+                color:gray;
             }
 
         .account-box {
@@ -157,7 +160,7 @@
 
                                 </div>
                                
-                                <div class="account-content pt-1 pb-1 pl-1 pr-1 mini minimixiON" >
+                                <div class="account-content pt-1 pb-1 pl-1 pr-1 mini minimixiOFF" >
                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                         <ContentTemplate>
                                              <div class="form-group m-b-20 mt-2" >
@@ -165,7 +168,7 @@
                                             <div class="col-md-12 p-0" id="appendtextbox" runat="server">
                                                 <label for="txtType" class="d-none">Category Type</label>
                                                 <input name="txtDynamic0"  type="text" id="txtDynamic0" runat="server" class="form-control col-9 float-left" autocomplete="off" placeholder="" required />
-                                            <a href="#" runat="server" id="aButton" onserverclick="btnAddTextBox_Click" class="addtextbox col-1 float-left" style=""><i class="fas fa-plus-square fa-lg" ></i></a>
+                                            <a href="#" runat="server" id="aButton" onserverclick="btnAddTextBox_Click" class="addtextbox col-1 float-left mr-2" style=""><i class="fas fa-plus-square fa-lg" ></i></a>
                                                <a  runat="server" id="acButton"   class="addtextbox col-1 float-left" style=""><i id="ifa" class="fas fa-window-close fa-lg disabled" style=""></i></a>
                                                
                                                 <%--<asp:LinkButton ID="LB" runat="server" CommandArgument='<%# Eval("ID") %>' OnClick="btnRemove_Click">LinkButton</asp:LinkButton>
@@ -200,7 +203,7 @@
 
 
                                 </div>
-                                <div class="account-logo-box mini minimixiON" style="padding: 6px 13px 6px 13px;background-color: transparent;border-top:1px solid #fff;">
+                                <div class="account-logo-box mini minimixiOFF" style="padding: 6px 13px 6px 13px;background-color: transparent;border-top:1px solid #fff;">
                                     <div class="row">
                                         <div class="col-12">
                                             
@@ -229,7 +232,7 @@
                             </div>
                         </div>
 
-                    <div class="account-pages">
+                    <div class="account-pages prod">
                             <div class="account-box" >
                                 <div class="account-logo-box phv" style="padding: 18px 30px 7px 13px;  ">
                                     <div class="row">
@@ -254,11 +257,11 @@
                                             <div class="form-group m-b-20 mt-2">
                                                 <asp:Repeater ID="rptMainList" runat="server">
                                                     <ItemTemplate>
-                                                        <div class="row ml-0 mr-0">
-                                                            <div class="col-md-10 p-0 catlist" id="Div1" runat="server">
+                                                        <div class="row ml-0 mr-0" style="border-bottom:1px solid white;color:#0e243a;padding:10px 15px;text-decoration:none;">
+                                                            <div class="col-md-10 p-0 catlist" id="Div1" runat="server" >
 
                                                                 <%--testProductDetails.aspx?productID=<%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "ProductID"))) %>--%>
-                                                                <a href="#">
+                                                                <a >
                                                                     <%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "Type"))) %></span>
                                                                 </a>
 
