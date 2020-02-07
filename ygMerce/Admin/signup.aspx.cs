@@ -30,7 +30,7 @@ namespace ygMerce.Admin
                 for (var i = 1; i < TextBoxCount; i++)
                 {
                     AddTextBox(i);
-                    AddButton(i);
+                    //AddButton(i);
                 }
                
             }
@@ -60,40 +60,59 @@ namespace ygMerce.Admin
         {
             var txt = new HtmlInputText { ID = string.Concat("txtDynamic", index) };
             txt.Style.Add("display", "block");
-            txt.Attributes.Add("class", "form-control mt-2");
+            txt.Attributes.Add("class", "form-control col-9 float-left");
             txt.Attributes.Add("runat", "server");
             //var btn = new Button { Text = "Remove" };
-            //btn.Click += btnRemove_Click;
-            
+            //btn.Click += acButton_ServerClick;
+
             appendtextbox.Controls.Add(txt);
+            AddButton(index);
+            AddCloseButton(index);
         }
         private void AddButton(int index)
         {
             var txt = new HtmlAnchor { ID = string.Concat("aButton", index) };
             txt.Style.Add("display", "block");
-            txt.Style.Add("margin-top", "18px");
+            txt.Attributes.Add("class", "addtextbox col-1 float-left");
+            //txt.Attributes.Add("onserverclick", "btnAddTextBox_Click");
             txt.HRef = "javascript:__doPostBack('aButton','')";
             
-            txt.InnerHtml = "<i class='fas fa-plus-square fa-lg' style='font-size:2em;'></i>";
+            txt.InnerHtml = "<i class='fas fa-plus-square fa-lg' ></i>";
             //var btn = new Button { Text = "Remove" };
-            //btn.Click += btnRemove_Click;
-            appendbutton.Controls.Add(txt);
+            //btn.Click += acButton_ServerClick;
+            appendtextbox.Controls.Add(txt);
+        }
+
+        private void AddCloseButton(int index)
+        {
+            var txt = new HtmlAnchor { ID = string.Concat("acButton", index) };
+            txt.Style.Add("display", "block");
+            txt.Attributes.Add("class", "addtextbox col-1 float-left");
+            //txt.Attributes.Add("onserverclick", "btnAddTextBox_Click");
+            txt.HRef = "javascript:__doPostBack('acButton','')";
+
+            txt.InnerHtml = "<i class='fas fa-window-close fa-lg' ></i>";
+            //var btn = new Button { Text = "Remove" };
+            //btn.Click += acButton_ServerClick;
+            appendtextbox.Controls.Add(txt);
         }
 
         void addtb()
         {
             AddTextBox(TextBoxCount);
-            AddButton(TextBoxCount);
+            //AddButton(TextBoxCount);
             TextBoxCount++;
         }
         protected void btnAddTextBox_Click(object sender, EventArgs e)
         {
             addtb();
         }
-        private void btnRemove_Click(object sender, EventArgs e)
+        public void btnRemove_Click(object sender, EventArgs e)
         {
-            
-            //    var btnRemove = sender as Button;
+            //var a = sender.GetType().ToString();
+            string id = (sender as HtmlAnchor).ID;
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('"+ id + "')", true);
+            //var btnRemove = sender as Button;
             //if (btnRemove == null) return;
             //btnRemove.Parent.Visible = false;
         }
@@ -109,11 +128,14 @@ namespace ygMerce.Admin
                 //HtmlGenericControl g = new HtmlGenericControl();
                 
                 var g = (HtmlInputText)appendtextbox.FindControl("txtDynamic" + i.ToString());
-                var b = (HtmlAnchor)appendbutton.FindControl("aButton" + i.ToString());
+                var b = (HtmlAnchor)appendtextbox.FindControl("aButton" + i.ToString());
+                var ac = (HtmlAnchor)appendtextbox.FindControl("acButton" + i.ToString());
+
                 appendtextbox.Controls.Remove(g);
-                appendbutton.Controls.Remove(b);
+                appendtextbox.Controls.Remove(b);
+                appendtextbox.Controls.Remove(ac);
             }
-            TextBoxCount = 0;
+            TextBoxCount = 1;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -233,5 +255,7 @@ namespace ygMerce.Admin
 
 
         }
+
+       
     }
 }

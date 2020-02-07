@@ -60,15 +60,6 @@ namespace ygMerce.Admin
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDynamic0;
 
         /// <summary>
-        /// appendbutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl appendbutton;
-
-        /// <summary>
         /// aButton control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,24 @@ namespace ygMerce.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aButton;
+
+        /// <summary>
+        /// acButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor acButton;
+
+        /// <summary>
+        /// appendbutton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl appendbutton;
 
         /// <summary>
         /// Btnconfirm1 control.

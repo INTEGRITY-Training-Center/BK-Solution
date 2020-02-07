@@ -26,21 +26,31 @@
             background: linear-gradient(to left, #a644e4, #56c8b8);
 
         }
-        .fa-list::before{
-           
+        
+        
+        i.fa-window-maximize{
+            padding:5px;
+            border-radius:3px;
         }
+        .account-logo-box.hv:hover i.fa-window-maximize, .account-logo-box.phv:hover i.fa-window-maximize
+        {
+            background-color:#d5d5d5a8;
+        }
+
         .account-logo-box.hv i.fa-window-maximize::before {
-            content: "\f2d0";
+            /*content: "\f2d0";*/
+             content: "\f141";
         }
         .account-logo-box.phv i.fa-window-maximize::before{
-             content: "\f2d0";
+             /*content: "\f2d0";*/
+              content: "\f141";
         }
         .account-logo-box.hv i.fa-window-maximize.ON::before {
-            content: "\f2d1";
+            content: "\f141";
         }
 
         .account-logo-box.phv i.fa-window-maximize.PON::before {
-            content: "\f2d1";
+            content: "\f141";
         }
 
         .mini.minimixiON, .kiki.minimixiPON {
@@ -48,10 +58,9 @@
             display: block;
             transition: display 2s;
         }
-        .mini.minimixiOFF,.kiki.minimixiPOFF{
-             /*content: "\f2d1";*/
-             display:none;
-             transition: display 2s;
+        .mini.minimixiOFF, .kiki.minimixiPOFF { /*content: "\f2d1";*/
+            display: none;
+            transition: display 2s;
         }
         #minimixer {
             z-index: 1000;
@@ -62,7 +71,8 @@
             }
 
         .account-logo-box.hv, .account-logo-box.phv {
-            background-color: #194854;
+            background-color: transparent;
+            border-bottom: 1px solid #fff;
         }
             .account-logo-box.hv > h5, .account-logo-box.phv > h5 {
                 display: inline-block;
@@ -79,6 +89,31 @@
         .account-pages {
             display: initial;
         }
+        a i.fa-plus-square, a i.fa-window-close{
+            color:white;
+            font-size:1.3em;
+            vertical-align: -webkit-baseline-middle;
+        }
+        a i.fa-plus-square:hover{
+            color:black;
+        }
+
+            a i.fa-window-close:hover {
+                color:red;
+            }
+
+
+        .account-box {
+            position: relative;
+            max-width: 460px;
+            margin: 20px auto;
+             background-color: transparent; 
+            border-radius: 0;
+            border: 1px solid #fff;
+        }
+        .cat input.form-control{
+            margin-bottom:10px;
+        }
     </style>
 </head>
 <body class="bg-accpunt-pages">
@@ -94,18 +129,21 @@
                 <!-- New Category -->
                 <div class="col-md-3 cat">
                     <div class="account-pages">
-                            <div class="account-box" style="border-radius:24px;">
+                            <div class="account-box" style="">
                                 <div class="account-logo-box hv" style="padding: 18px 30px 7px 13px;  ">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h4 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
+                                            <h4 class="fa fa-list-alt text-left" style="                                                    display: block;
+                                                    text-align: center;
+                                                    color: #fff;
+                                                    font-size: initial;">
                                               <span>အမျိုးအစား သတ်မှတ်ခြင်း</span> 
                                                 
                                             </h4>
                                             
                                         </div>
                                         <div class="col-2 text-right" id="minimixer" > 
-                                            <a  style="color:white;margin-top: -4px;display: block;margin-left: 20px;"><i class="fa fa-window-maximize ON"></i></a>
+                                            <a  style="color: white; margin-top: -4px; display: block; margin-left: 20px;"><i class="fa fa-window-maximize ON"></i></a>
                                         </div>
                                     </div>
 
@@ -117,12 +155,14 @@
                                         <ContentTemplate>
                                              <div class="form-group m-b-20 mt-2" >
                                             <div class="row ml-0 mr-0" >
-                                            <div class="col-md-10 p-0" id="appendtextbox" runat="server">
+                                            <div class="col-md-12 p-0" id="appendtextbox" runat="server">
                                                 <label for="txtType" class="d-none">Category Type</label>
-                                                <input name="txtDynamic0"  type="text" id="txtDynamic0" runat="server" class="form-control" autocomplete="off" placeholder="" required />
-                                            </div>
+                                                <input name="txtDynamic0"  type="text" id="txtDynamic0" runat="server" class="form-control col-9 float-left" autocomplete="off" placeholder="" required />
+                                            <a href="#" runat="server" id="aButton" onserverclick="btnAddTextBox_Click" class="addtextbox col-1 float-left" style=""><i class="fas fa-plus-square fa-lg" ></i></a>
+                                               <a href="#" runat="server" id="acButton" onserverclick="btnRemove_Click" class="addtextbox col-1 float-left" style=""><i class="fas fa-window-close fa-lg" ></i></a>
+                                               
+                                                </div>
                                             <div class="col-md-1 pl-3 mt-2" style="" id="appendbutton" runat="server">
-                                                <a href="#" runat="server" id="aButton" onserverclick="btnAddTextBox_Click" class="addtextbox" style=""><i class="fas fa-plus-square fa-lg" style="font-size:2em;"></i></a>
                                                 
                                             </div>
                                                 </div>
@@ -152,7 +192,7 @@
 
 
                                 </div>
-                                <div class="account-logo-box mini minimixiON" style="padding: 6px 13px 6px 13px;background-color: #194854;">
+                                <div class="account-logo-box mini minimixiON" style="padding: 6px 13px 6px 13px;background-color: transparent;border-top:1px solid #fff;">
                                     <div class="row">
                                         <div class="col-12">
                                             
@@ -186,8 +226,8 @@
                                 <div class="account-logo-box phv" style="padding: 18px 30px 7px 13px;  ">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h4 class="fa fa-object-group text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
-                                               <span>ရောင်းကုန်သတ်မှတ်ခြင်း </span>
+                                            <h4 class="fas fa-box text-left" style="display: block; text-align: center;color:#fff;font-size:initial;">
+                                               <span>ရောင်းကုန် သတ်မှတ်ခြင်း </span>
                                                 
                                             </h4>
                                             
