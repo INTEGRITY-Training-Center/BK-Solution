@@ -41,6 +41,7 @@ namespace ygMerce.Admin
                 rptMainList.DataBind();
 
             }
+            //this.acButton.Disabled = true;
             //addtb();
             //var g = (TextBox)appendtextbox.FindControl("txtDynamic0");
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message","alert('"+ g.ID.ToArray().Count().ToString()+"')", true);
@@ -85,13 +86,16 @@ namespace ygMerce.Admin
 
         private void AddCloseButton(int index)
         {
-            var txt = new HtmlAnchor { ID = string.Concat("acButton", index) };
+            var txt = new LinkButton { ID = string.Concat("acButton", index) };
             txt.Style.Add("display", "block");
             txt.Attributes.Add("class", "addtextbox col-1 float-left");
-            //txt.Attributes.Add("onserverclick", "btnAddTextBox_Click");
-            txt.HRef = "javascript:__doPostBack('acButton','')";
+            //txt.Attributes.Add("onserverclick", "btnRemove_Click");
+            //txt.Attributes.Add("CommandArgument", "'<%# Eval(" + txt.ID + ") %>'");
+            txt.CommandArgument = txt.ID;
+            txt.Command += new CommandEventHandler(btnRemove_Click);
+            //txt. = "javascript:__doPostBack('acButton','')";
 
-            txt.InnerHtml = "<i class='fas fa-window-close fa-lg' ></i>";
+            txt.Text = "<i class='fas fa-window-close fa-lg' ></i>";
             //var btn = new Button { Text = "Remove" };
             //btn.Click += acButton_ServerClick;
             appendtextbox.Controls.Add(txt);
@@ -110,8 +114,17 @@ namespace ygMerce.Admin
         public void btnRemove_Click(object sender, EventArgs e)
         {
             //var a = sender.GetType().ToString();
-            string id = (sender as HtmlAnchor).ID;
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('"+ id + "')", true);
+            var id = ((LinkButton)sender).CommandArgument;
+            string s = id.Substring(8);
+            var g = (HtmlInputText)appendtextbox.FindControl("txtDynamic" + s);
+            var b = (HtmlAnchor)appendtextbox.FindControl("aButton" + s);
+            var ac = (LinkButton)appendtextbox.FindControl(id);
+            appendtextbox.Controls.Remove(g);
+            appendtextbox.Controls.Remove(b);
+            appendtextbox.Controls.Remove(ac);
+            TextBoxCount--;
+
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('"+ id + "')", true);
             //var btnRemove = sender as Button;
             //if (btnRemove == null) return;
             //btnRemove.Parent.Visible = false;
@@ -129,7 +142,7 @@ namespace ygMerce.Admin
                 
                 var g = (HtmlInputText)appendtextbox.FindControl("txtDynamic" + i.ToString());
                 var b = (HtmlAnchor)appendtextbox.FindControl("aButton" + i.ToString());
-                var ac = (HtmlAnchor)appendtextbox.FindControl("acButton" + i.ToString());
+                var ac = (LinkButton)appendtextbox.FindControl("acButton" + i.ToString());
 
                 appendtextbox.Controls.Remove(g);
                 appendtextbox.Controls.Remove(b);
@@ -256,6 +269,10 @@ namespace ygMerce.Admin
 
         }
 
-       
+        protected void acButton_ServerClick(object sender, EventArgs e)
+        {
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('Atlease on')", true);
+            //this.acButton.Disabled = true;
+        }
     }
 }

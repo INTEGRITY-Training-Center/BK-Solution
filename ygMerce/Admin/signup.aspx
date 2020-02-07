@@ -101,7 +101,9 @@
             a i.fa-window-close:hover {
                 color:red;
             }
-
+            a #ifa:hover{
+                color:transparent;
+            }
 
         .account-box {
             position: relative;
@@ -113,6 +115,10 @@
         }
         .cat input.form-control{
             margin-bottom:10px;
+            color: #0e243a;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #102e4c;
         }
     </style>
 </head>
@@ -136,7 +142,8 @@
                                             <h4 class="fa fa-list-alt text-left" style="                                                    display: block;
                                                     text-align: center;
                                                     color: #fff;
-                                                    font-size: initial;">
+                                                    font-size: initial;
+                                            ">
                                               <span>အမျိုးအစား သတ်မှတ်ခြင်း</span> 
                                                 
                                             </h4>
@@ -159,9 +166,10 @@
                                                 <label for="txtType" class="d-none">Category Type</label>
                                                 <input name="txtDynamic0"  type="text" id="txtDynamic0" runat="server" class="form-control col-9 float-left" autocomplete="off" placeholder="" required />
                                             <a href="#" runat="server" id="aButton" onserverclick="btnAddTextBox_Click" class="addtextbox col-1 float-left" style=""><i class="fas fa-plus-square fa-lg" ></i></a>
-                                               <a href="#" runat="server" id="acButton" onserverclick="btnRemove_Click" class="addtextbox col-1 float-left" style=""><i class="fas fa-window-close fa-lg" ></i></a>
+                                               <a  runat="server" id="acButton"   class="addtextbox col-1 float-left" style=""><i id="ifa" class="fas fa-window-close fa-lg disabled" style=""></i></a>
                                                
-                                                </div>
+                                                <%--<asp:LinkButton ID="LB" runat="server" CommandArgument='<%# Eval("ID") %>' OnClick="btnRemove_Click">LinkButton</asp:LinkButton>
+                                              --%>  </div>
                                             <div class="col-md-1 pl-3 mt-2" style="" id="appendbutton" runat="server">
                                                 
                                             </div>
