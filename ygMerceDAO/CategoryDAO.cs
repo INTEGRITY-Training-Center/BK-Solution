@@ -38,6 +38,33 @@ namespace ygMerceDAO
 
         }
 
+        public List<Categoryinfo> SelectCategoryList()
+        {
+            try
+            {
+                List<Categoryinfo> cObj = new List<Categoryinfo>();
+                using (RMSDataContext db = new RMSDataContext())
+                {
+
+                    var hp = (from c in db.Categories orderby c.Type select new { c.CategoryID, c.Type }).ToList();
+                    foreach (var obj in hp)
+                    {
+                        Categoryinfo cInfo = new Categoryinfo();
+                        cInfo.CategoryID = obj.CategoryID;
+                        cInfo.Type = obj.Type;
+
+                        cObj.Add(cInfo);
+                    }
+                    return cObj;
+                }
+            }
+            catch (Exception ex)
+            {
+                return new List<Categoryinfo>();
+            }
+
+        }
+
         #endregion
 
         #region InsertCategory

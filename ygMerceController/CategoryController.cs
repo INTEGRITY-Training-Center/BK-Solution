@@ -20,7 +20,15 @@ namespace ygMerceController
 
             return lstCategory;
         }
-public void InsertCategory(Categoryinfo cinfo)
+
+        public List<Categoryinfo> SelectCategoryColumn()
+        {
+            lstCategory = new List<Categoryinfo>();
+            lstCategory = catDao.SelectCategoryList();
+
+            return lstCategory;
+        }
+        public void InsertCategory(Categoryinfo cinfo)
         {
             catDao.InsertCategory(cinfo); 
         }

@@ -19,8 +19,8 @@ namespace ygMerce.Admin
             txtName.Text = string.Empty;
             txtMobileNo.Text = string.Empty;
             txtAddress.Text = string.Empty;
-            txtpw.Text = string.Empty;
-            txtretypepw.Text = string.Empty;
+            //txtpw.Text = string.Empty;
+            //txtretypepw.Text = string.Empty;
             txtMobileNo.Style.Add("border-color", "#ced4da");
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,8 @@ namespace ygMerce.Admin
 
             if(!IsPostBack)
             {
-                rptMainList.DataSource = con.SelectAllCategoryInfo();
+                rptMainList.DataSource = con.SelectCategoryColumn();
+                rptcount = con.SelectCategoryColumn().Count();
                 rptMainList.DataBind();
 
             }
@@ -45,6 +46,16 @@ namespace ygMerce.Admin
             //addtb();
             //var g = (TextBox)appendtextbox.FindControl("txtDynamic0");
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message","alert('"+ g.ID.ToArray().Count().ToString()+"')", true);
+        }
+
+        private int rptcount
+        {
+            get
+            {
+                var count = ViewState["rptcount"];
+                return (count == null) ? 0 : (int)count;
+            }
+            set { ViewState["rptcount"] = value; }
         }
 
         private int TextBoxCount
@@ -153,8 +164,8 @@ namespace ygMerce.Admin
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtpw.Text.Trim() == txtretypepw.Text.Trim())
-            {
+            //if(txtpw.Text.Trim() == txtretypepw.Text.Trim())
+            //{
                 BKCustomerController bcon = new BKCustomerController();
                 BKCustomerInfo binfo = new BKCustomerInfo();
 
@@ -165,7 +176,7 @@ namespace ygMerce.Admin
                     binfo.Name = txtName.Text.Trim();
                     binfo.Contact = txtMobileNo.Text.Trim();
                     binfo.address = txtAddress.Text.Trim();
-                    binfo.CustomerPassword = txtpw.Text.Trim();
+                    //binfo.CustomerPassword = txtpw.Text.Trim();
                     binfo.InsertDate = DateTime.UtcNow.AddMinutes(390);
                     binfo.UpdateDate = DateTime.UtcNow.AddMinutes(390);
 
@@ -205,7 +216,7 @@ namespace ygMerce.Admin
                     txtMobileNo.Style.Add("border-color", "Orange");
 
                 }
-            }
+            
             
         }
 
@@ -274,6 +285,18 @@ namespace ygMerce.Admin
         {
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('Atlease on')", true);
             //this.acButton.Disabled = true;
+        }
+
+        protected void addp_ServerClick(object sender, EventArgs e)
+        {
+            var id = ((LinkButton)sender).CommandArgument;
+            string s = id.ToString();
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message",s, true);
+
+            //for (int i = 0; i < rptcount; i++)
+            //{
+            //    var g = (HtmlAnchor)rptMainList.FindControl("rptMainList_lblpid_" + i.ToString());
+            //}
         }
     }
 }
