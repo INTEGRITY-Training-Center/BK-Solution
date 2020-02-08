@@ -30,9 +30,6 @@ namespace ygMerceDAO.DBML
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBKCustomer(BKCustomer instance);
-    partial void UpdateBKCustomer(BKCustomer instance);
-    partial void DeleteBKCustomer(BKCustomer instance);
     partial void InsertUnitOfMeasure(UnitOfMeasure instance);
     partial void UpdateUnitOfMeasure(UnitOfMeasure instance);
     partial void DeleteUnitOfMeasure(UnitOfMeasure instance);
@@ -111,6 +108,12 @@ namespace ygMerceDAO.DBML
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
+    partial void InsertBKCustomer(BKCustomer instance);
+    partial void UpdateBKCustomer(BKCustomer instance);
+    partial void DeleteBKCustomer(BKCustomer instance);
+    partial void InsertBK_Product(BK_Product instance);
+    partial void UpdateBK_Product(BK_Product instance);
+    partial void DeleteBK_Product(BK_Product instance);
     #endregion
 		
 		public RMSDataContext() : 
@@ -141,14 +144,6 @@ namespace ygMerceDAO.DBML
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<BKCustomer> BKCustomers
-		{
-			get
-			{
-				return this.GetTable<BKCustomer>();
-			}
 		}
 		
 		public System.Data.Linq.Table<UnitOfMeasure> UnitOfMeasures
@@ -358,258 +353,20 @@ namespace ygMerceDAO.DBML
 				return this.GetTable<Category>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BKCustomer")]
-	public partial class BKCustomer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CustomerID;
-		
-		private string _Customercode;
-		
-		private string _Name;
-		
-		private string _TownshipID;
-		
-		private string _Contact;
-		
-		private string _Address;
-		
-		private System.DateTime _InsertDate;
-		
-		private System.DateTime _UpdateDate;
-		
-		private string _CustomerPassword;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCustomerIDChanging(int value);
-    partial void OnCustomerIDChanged();
-    partial void OnCustomercodeChanging(string value);
-    partial void OnCustomercodeChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnTownshipIDChanging(string value);
-    partial void OnTownshipIDChanged();
-    partial void OnContactChanging(string value);
-    partial void OnContactChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnInsertDateChanging(System.DateTime value);
-    partial void OnInsertDateChanged();
-    partial void OnUpdateDateChanging(System.DateTime value);
-    partial void OnUpdateDateChanged();
-    partial void OnCustomerPasswordChanging(string value);
-    partial void OnCustomerPasswordChanged();
-    #endregion
-		
-		public BKCustomer()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CustomerID
+		public System.Data.Linq.Table<BKCustomer> BKCustomers
 		{
 			get
 			{
-				return this._CustomerID;
-			}
-			set
-			{
-				if ((this._CustomerID != value))
-				{
-					this.OnCustomerIDChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerID = value;
-					this.SendPropertyChanged("CustomerID");
-					this.OnCustomerIDChanged();
-				}
+				return this.GetTable<BKCustomer>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customercode", AutoSync=AutoSync.Always, DbType="VarChar(9)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public string Customercode
+		public System.Data.Linq.Table<BK_Product> BK_Products
 		{
 			get
 			{
-				return this._Customercode;
-			}
-			set
-			{
-				if ((this._Customercode != value))
-				{
-					this.OnCustomercodeChanging(value);
-					this.SendPropertyChanging();
-					this._Customercode = value;
-					this.SendPropertyChanged("Customercode");
-					this.OnCustomercodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TownshipID", DbType="Char(36)")]
-		public string TownshipID
-		{
-			get
-			{
-				return this._TownshipID;
-			}
-			set
-			{
-				if ((this._TownshipID != value))
-				{
-					this.OnTownshipIDChanging(value);
-					this.SendPropertyChanging();
-					this._TownshipID = value;
-					this.SendPropertyChanged("TownshipID");
-					this.OnTownshipIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Contact
-		{
-			get
-			{
-				return this._Contact;
-			}
-			set
-			{
-				if ((this._Contact != value))
-				{
-					this.OnContactChanging(value);
-					this.SendPropertyChanging();
-					this._Contact = value;
-					this.SendPropertyChanged("Contact");
-					this.OnContactChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InsertDate", DbType="DateTime NOT NULL")]
-		public System.DateTime InsertDate
-		{
-			get
-			{
-				return this._InsertDate;
-			}
-			set
-			{
-				if ((this._InsertDate != value))
-				{
-					this.OnInsertDateChanging(value);
-					this.SendPropertyChanging();
-					this._InsertDate = value;
-					this.SendPropertyChanged("InsertDate");
-					this.OnInsertDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="DateTime NOT NULL")]
-		public System.DateTime UpdateDate
-		{
-			get
-			{
-				return this._UpdateDate;
-			}
-			set
-			{
-				if ((this._UpdateDate != value))
-				{
-					this.OnUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateDate = value;
-					this.SendPropertyChanged("UpdateDate");
-					this.OnUpdateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerPassword", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string CustomerPassword
-		{
-			get
-			{
-				return this._CustomerPassword;
-			}
-			set
-			{
-				if ((this._CustomerPassword != value))
-				{
-					this.OnCustomerPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerPassword = value;
-					this.SendPropertyChanged("CustomerPassword");
-					this.OnCustomerPasswordChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<BK_Product>();
 			}
 		}
 	}
@@ -3423,7 +3180,7 @@ namespace ygMerceDAO.DBML
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainPic", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainPic", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary MainPic
 		{
 			get
@@ -5141,7 +4898,7 @@ namespace ygMerceDAO.DBML
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(100)")]
 		public string Type
 		{
 			get
@@ -5177,6 +4934,466 @@ namespace ygMerceDAO.DBML
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BKCustomer")]
+	public partial class BKCustomer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CustomerID;
+		
+		private string _Customercode;
+		
+		private string _Name;
+		
+		private string _TownshipID;
+		
+		private string _Contact;
+		
+		private string _Address;
+		
+		private System.DateTime _InsertDate;
+		
+		private System.DateTime _UpdateDate;
+		
+		private string _CustomerPassword;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomerIDChanging(int value);
+    partial void OnCustomerIDChanged();
+    partial void OnCustomercodeChanging(string value);
+    partial void OnCustomercodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnTownshipIDChanging(string value);
+    partial void OnTownshipIDChanged();
+    partial void OnContactChanging(string value);
+    partial void OnContactChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnInsertDateChanging(System.DateTime value);
+    partial void OnInsertDateChanged();
+    partial void OnUpdateDateChanging(System.DateTime value);
+    partial void OnUpdateDateChanged();
+    partial void OnCustomerPasswordChanging(string value);
+    partial void OnCustomerPasswordChanged();
+    #endregion
+		
+		public BKCustomer()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this.OnCustomerIDChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerID = value;
+					this.SendPropertyChanged("CustomerID");
+					this.OnCustomerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customercode", AutoSync=AutoSync.Always, DbType="VarChar(9)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string Customercode
+		{
+			get
+			{
+				return this._Customercode;
+			}
+			set
+			{
+				if ((this._Customercode != value))
+				{
+					this.OnCustomercodeChanging(value);
+					this.SendPropertyChanging();
+					this._Customercode = value;
+					this.SendPropertyChanged("Customercode");
+					this.OnCustomercodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TownshipID", DbType="Char(36)")]
+		public string TownshipID
+		{
+			get
+			{
+				return this._TownshipID;
+			}
+			set
+			{
+				if ((this._TownshipID != value))
+				{
+					this.OnTownshipIDChanging(value);
+					this.SendPropertyChanging();
+					this._TownshipID = value;
+					this.SendPropertyChanged("TownshipID");
+					this.OnTownshipIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Contact
+		{
+			get
+			{
+				return this._Contact;
+			}
+			set
+			{
+				if ((this._Contact != value))
+				{
+					this.OnContactChanging(value);
+					this.SendPropertyChanging();
+					this._Contact = value;
+					this.SendPropertyChanged("Contact");
+					this.OnContactChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InsertDate", DbType="DateTime NOT NULL")]
+		public System.DateTime InsertDate
+		{
+			get
+			{
+				return this._InsertDate;
+			}
+			set
+			{
+				if ((this._InsertDate != value))
+				{
+					this.OnInsertDateChanging(value);
+					this.SendPropertyChanging();
+					this._InsertDate = value;
+					this.SendPropertyChanged("InsertDate");
+					this.OnInsertDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this.OnUpdateDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateDate = value;
+					this.SendPropertyChanged("UpdateDate");
+					this.OnUpdateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerPassword", DbType="VarChar(100)")]
+		public string CustomerPassword
+		{
+			get
+			{
+				return this._CustomerPassword;
+			}
+			set
+			{
+				if ((this._CustomerPassword != value))
+				{
+					this.OnCustomerPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerPassword = value;
+					this.SendPropertyChanged("CustomerPassword");
+					this.OnCustomerPasswordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BK_Product")]
+	public partial class BK_Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _BK_ProductID;
+		
+		private string _BK_ProductName;
+		
+		private decimal _BK_Price;
+		
+		private string _UMID;
+		
+		private string _CategoryID;
+		
+		private System.DateTime _InsertedDate;
+		
+		private System.DateTime _UpdatedDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBK_ProductIDChanging(string value);
+    partial void OnBK_ProductIDChanged();
+    partial void OnBK_ProductNameChanging(string value);
+    partial void OnBK_ProductNameChanged();
+    partial void OnBK_PriceChanging(decimal value);
+    partial void OnBK_PriceChanged();
+    partial void OnUMIDChanging(string value);
+    partial void OnUMIDChanged();
+    partial void OnCategoryIDChanging(string value);
+    partial void OnCategoryIDChanged();
+    partial void OnInsertedDateChanging(System.DateTime value);
+    partial void OnInsertedDateChanged();
+    partial void OnUpdatedDateChanging(System.DateTime value);
+    partial void OnUpdatedDateChanged();
+    #endregion
+		
+		public BK_Product()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BK_ProductID", DbType="Char(36) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string BK_ProductID
+		{
+			get
+			{
+				return this._BK_ProductID;
+			}
+			set
+			{
+				if ((this._BK_ProductID != value))
+				{
+					this.OnBK_ProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._BK_ProductID = value;
+					this.SendPropertyChanged("BK_ProductID");
+					this.OnBK_ProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BK_ProductName", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string BK_ProductName
+		{
+			get
+			{
+				return this._BK_ProductName;
+			}
+			set
+			{
+				if ((this._BK_ProductName != value))
+				{
+					this.OnBK_ProductNameChanging(value);
+					this.SendPropertyChanging();
+					this._BK_ProductName = value;
+					this.SendPropertyChanged("BK_ProductName");
+					this.OnBK_ProductNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BK_Price", DbType="Decimal(18,2) NOT NULL")]
+		public decimal BK_Price
+		{
+			get
+			{
+				return this._BK_Price;
+			}
+			set
+			{
+				if ((this._BK_Price != value))
+				{
+					this.OnBK_PriceChanging(value);
+					this.SendPropertyChanging();
+					this._BK_Price = value;
+					this.SendPropertyChanged("BK_Price");
+					this.OnBK_PriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UMID", DbType="Char(36) NOT NULL", CanBeNull=false)]
+		public string UMID
+		{
+			get
+			{
+				return this._UMID;
+			}
+			set
+			{
+				if ((this._UMID != value))
+				{
+					this.OnUMIDChanging(value);
+					this.SendPropertyChanging();
+					this._UMID = value;
+					this.SendPropertyChanged("UMID");
+					this.OnUMIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Char(36) NOT NULL", CanBeNull=false)]
+		public string CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InsertedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime InsertedDate
+		{
+			get
+			{
+				return this._InsertedDate;
+			}
+			set
+			{
+				if ((this._InsertedDate != value))
+				{
+					this.OnInsertedDateChanging(value);
+					this.SendPropertyChanging();
+					this._InsertedDate = value;
+					this.SendPropertyChanged("InsertedDate");
+					this.OnInsertedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime UpdatedDate
+		{
+			get
+			{
+				return this._UpdatedDate;
+			}
+			set
+			{
+				if ((this._UpdatedDate != value))
+				{
+					this.OnUpdatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedDate = value;
+					this.SendPropertyChanged("UpdatedDate");
+					this.OnUpdatedDateChanged();
 				}
 			}
 		}
