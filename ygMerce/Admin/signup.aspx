@@ -36,7 +36,7 @@
             padding:5px;
             border-radius:3px;
         }
-        .account-logo-box.hv:hover i.fa-window-maximize, .account-logo-box.phv:hover i.fa-window-maximize
+        .account-logo-box.hv:hover i.fa-window-maximize, .account-logo-box.phv:hover i.fa-window-maximize,  .account-logo-box.hvp:hover i.fa-window-maximize
         {
             background-color:#d5d5d5a8;
         }
@@ -49,6 +49,10 @@
             /*content: "\f2d0";*/
             content: "\f141";
         }
+        .account-logo-box.hvp i.fa-window-maximize::before {
+            /*content: "\f2d0";*/
+            content: "\f141";
+        }
         .account-logo-box.hv i.fa-window-maximize.ON::before {
             content: "\f141";
         }
@@ -58,7 +62,6 @@
         }
 
         .mini.minimixiON, .kiki.minimixiPON {
-            
             display: block;
         }
         .mini.minimixiOFF, .kiki.minimixiPOFF { /*content: "\f2d1";*/
@@ -73,7 +76,7 @@
                 cursor: pointer;
             }
 
-        .account-logo-box.hv, .account-logo-box.phv {
+        .account-logo-box.hv, .account-logo-box.phv,.account-logo-box.hvp  {
             background-color: transparent;
             border-bottom: 1px solid #fff;
         }
@@ -81,7 +84,7 @@
                 display: inline-block;
             }
 
-            .account-logo-box.hv:hover, .account-logo-box.phv:hover {
+            .account-logo-box.hv:hover, .account-logo-box.phv:hover, .account-logo-box.hvp:hover {
                 cursor: pointer;
                 background-color: #175c81;
                 transition: background-color 0.5s;
@@ -92,9 +95,9 @@
         .account-pages {
             display: initial;
         }
-        a i.fa-plus-square, a i.fa-window-close{
-            color:white;
-            font-size:1.5em;
+        a i.fa-plus-square, a i.fa-window-close {
+            color: white;
+            font-size: 1.5em;
             vertical-align: -webkit-baseline-middle;
         }
         a i.fa-plus-square:hover{
@@ -104,9 +107,9 @@
             a i.fa-window-close:hover {
                 color:red;
             }
-             a #ifa{
-                color:gray;
-            }
+        a #ifa {
+            color: gray;
+        }
             a #ifa:hover{
                 color:gray;
             }
@@ -126,6 +129,18 @@
     background-clip: padding-box;
     border: 1px solid #102e4c;
         }
+
+        .prd .account-box {
+            width:100%;
+            max-width:unset;
+        }
+        .dsa {
+            display:none;
+        }
+        .ena{
+            display:block;
+        }
+
     </style>
 </head>
 <body class="bg-accpunt-pages">
@@ -185,12 +200,7 @@
                                     </asp:UpdatePanel>
                                        
 
-                                        <div class="form-group m-b-20 d-none">
-                                            <div class="col-xs-12">
-                                                <label for="txtDescription">Description</label>
-                                                <input name="txtDescription" type="tel" id="txtDescription" class="form-control" autocomplete="off" placeholder="အေအးဗူး/ အေအးပုလင္း/ ေဖ်ာ္ရည္" required="">
-                                            </div>
-                                        </div>
+                                        
 
                                         
 
@@ -254,15 +264,15 @@
 
                                 </div>
                                 
-                                <div class="account-content pt-1 pb-1 pl-1 pr-1 kiki minimixiPOFF" >
-                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                        <ContentTemplate>
+                                <div class="account-content pt-1 pb-1 pl-1 pr-1 kiki minimixiPON" >
+                                   <%-- <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>--%>
                                             <div class="form-group m-b-20 mt-2">
                                                 <asp:Repeater ID="rptMainList" runat="server">
                                                     <ItemTemplate>
                                                         <div class="row ml-0 mr-0" style="border-bottom:1px solid white;color:#0e243a;padding:10px 15px;text-decoration:none;">
                                                             <div class="col-md-10 p-0 catlist" id="Div1" runat="server" >
-                                                                <asp:LinkButton ID="lbAddProduct" runat="server" OnCommand="addp_ServerClick" CommandArgument='<%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "CategoryID"))) %>' ><%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "Type"))) %></asp:LinkButton>
+                                                                <asp:LinkButton ID="lbAddProduct" runat="server" CommandName='<%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "Type"))) %>' OnCommand="lbAddProduct_Command" CommandArgument='<%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "CategoryID"))) %>' ><%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "Type"))) %></asp:LinkButton>
                                                                 <%--testProductDetails.aspx?productID=<%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "ProductID"))) %>--% <%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "CategoryID"))) %>>
                                                              <%--   <a id="addp" runat="server" onserverclick="addp_ServerClick">
                                                                    <label id="lblpid" runat="server" style="display:none;"><%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "CategoryID"))) %></label><span> <%# (Convert.ToString(DataBinder.Eval(Container.DataItem, "Type"))) %></span>
@@ -274,8 +284,8 @@
                                                     </ItemTemplate>
                                                 </asp:Repeater>
                                         </div>
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
+                                       <%-- </ContentTemplate>
+                                    </asp:UpdatePanel>--%>
                                        
 
                                         <div class="form-group m-b-20 d-none">
@@ -291,7 +301,101 @@
                         </div>
                 </div>
 
-                <div class="col-6"></div>
+                <div class="col-6" id="pod" runat="server" >
+                  
+
+                    
+                    <div class="account-pages prd dsa" id="prd" runat="server">
+                            <div class="account-box" style="">
+                                <div class="account-logo-box hvp" style="padding: 18px 30px 7px 13px;  ">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5 class="fa fa-list-alt text-left" style="                                                    display: block;
+                                                    text-align: center;
+                                                    color: #fff;
+                                                    font-size: initial;
+                                            ">
+                                              <asp:Label ID="lblType" runat="server"></asp:Label><span>သတ်မှတ်ခြင်း</span> 
+                                                
+                                            </h5>
+                                            
+                                        </div>
+                                        <div class="col-2 text-right"  > 
+                                            <a  style="color: white; margin-top: -4px; display: block; margin-left: 20px;"><i class="fa fa-window-maximize"></i></a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                               
+                                <div class="account-content pt-1 pb-1 pl-1 pr-1 " >
+                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                        <ContentTemplate>
+                                             <div class="form-group m-b-20 mt-2" >
+                                            <div class="row ml-0 mr-0" >
+                                            <div class="col-md-12 p-0" id="Div2" runat="server">
+                                              
+                                                <input name="txtProduct"  type="text" id="Text1" runat="server" class="form-control col-9 float-left" autocomplete="off" placeholder=""  />
+                                            <a href="#" runat="server" id="a1"  class="addtextbox col-1 float-left mr-2" style=""><i class="fas fa-plus-square fa-lg" ></i></a>
+                                               <a  runat="server" id="a2"   class="addtextbox col-1 float-left" style=""><i id="ifa" class="fas fa-window-close fa-lg disabled" style=""></i></a>
+                                               
+                                                <%--<asp:LinkButton ID="LB" runat="server" CommandArgument='<%# Eval("ID") %>' OnClick="btnRemove_Click">LinkButton</asp:LinkButton>
+                                              --%>  </div>
+                                            <div class="col-md-1 pl-3 mt-2" style="" id="Div3" runat="server">
+                                                
+                                            </div>
+                                                </div>
+                                        </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                       
+
+                                        
+                                        
+
+
+
+                                       
+                                  
+
+
+
+
+
+
+
+                                </div>
+                                <div class="account-logo-box " style="padding: 6px 13px 6px 13px;background-color: transparent;border-top:1px solid #fff;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            
+                                        
+                                            <div class="col-md-4 offset-8 p-0 text-right">
+                                                
+                                                
+                                               
+                                                
+                                              <button type="button" class="btn btn-sm btn-primary mt-0 w-auto " runat="server" id="Button1" validationgroup="abc" onserverclick="Btnconfirm_Click" ><i class="fas fa-save"></i>&nbsp; Save</button>
+
+                                                <%--<asp:Button ID="Btnconfirm" CssClass="btn btn-primary mt-0 w-auto" runat="server" Text=" Save" ValidationGroup="a" OnClick="Btnconfirm_Click" />--%>
+                                                
+                                               
+
+                                            </div>
+                                          
+                                          
+                                       
+                                            
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                   
+               
+                </div>
                  <!-- New Customer -->
                 <div class="col-md-3">
 

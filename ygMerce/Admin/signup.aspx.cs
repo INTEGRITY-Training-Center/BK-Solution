@@ -291,12 +291,22 @@ namespace ygMerce.Admin
         {
             var id = ((LinkButton)sender).CommandArgument;
             string s = id.ToString();
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message",s, true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message","alert('HI')", true);
 
             //for (int i = 0; i < rptcount; i++)
             //{
             //    var g = (HtmlAnchor)rptMainList.FindControl("rptMainList_lblpid_" + i.ToString());
             //}
+        }
+
+        protected void lbAddProduct_Command(object sender, CommandEventArgs e)
+        {
+            // var g = (HtmlGenericControl)pod.FindControl("prd");
+            prd.Attributes["class"]="account-pages prd ena";
+            lblType.Text = e.CommandName+" ";
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alert Message", "alert('" + e.CommandName.ToString() + e.CommandArgument.ToString() +   prd.Attributes["class"].ToString()+ "')", true); ;
+
+
         }
     }
 }
