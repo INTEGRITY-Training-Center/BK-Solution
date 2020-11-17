@@ -1,9 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RMS1" Class="RMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-B9TV610;Initial Catalog=RMS1;User ID=sa" SettingsObjectName="ygMerceDAO.Properties.Settings" SettingsPropertyName="RMS1ConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.UnitOfMeasure" Member="UnitOfMeasures">
-    <Type Name="UnitOfMeasure">
-      <Column Name="UMID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UMDescription" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RMS" Class="RMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-2C4G40Q\SQL2019;Initial Catalog=RMS;User ID=sa" SettingsObjectName="ygMerceDAO.Properties.Settings" SettingsPropertyName="RMSConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BKCustomer" Member="BKCustomers">
+    <Type Name="BKCustomer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Customercode" Type="System.String" DbType="VarChar(9)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TownshipID" Type="System.String" DbType="Char(36)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerPassword" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.brand" Member="brands">
@@ -12,6 +19,13 @@
       <Column Name="BrandName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Model" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CategoryID" Type="System.String" DbType="Char(36) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Cell_Price" Member="Cell_Prices">
@@ -247,35 +261,21 @@
       <Column Name="CityID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.Category" Member="Categories">
-    <Type Name="Category">
-      <Column Name="CategoryID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.BKCustomer" Member="BKCustomers">
-    <Type Name="BKCustomer">
-      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Customercode" Type="System.String" DbType="VarChar(9)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="TownshipID" Type="System.String" DbType="Char(36)" CanBeNull="true" />
-      <Column Name="Contact" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="CustomerPassword" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+  <Table Name="dbo.UnitOfMeasure" Member="UnitOfMeasures">
+    <Type Name="UnitOfMeasure">
+      <Column Name="UMID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UMDescription" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.BK_Product" Member="BK_Products">
     <Type Name="BK_Product">
       <Column Name="BK_ProductID" Type="System.String" DbType="Char(36) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="BK_ProductName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BK_ProductName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="BK_Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="UMID" Type="System.String" DbType="Char(36) NOT NULL" CanBeNull="false" />
       <Column Name="CategoryID" Type="System.String" DbType="Char(36) NOT NULL" CanBeNull="false" />
-      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

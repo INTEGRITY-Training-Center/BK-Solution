@@ -78,7 +78,7 @@ namespace ygMerceDAO
                     Guid cId = Guid.NewGuid();
                     tbl.CategoryID = cId.ToString();
                     tbl.Type = cInfo.Type;
-                    tbl.Description = cInfo.Description;
+                    tbl.Description = cInfo.Type;
 
                     db.Categories.InsertOnSubmit(tbl);
                     db.SubmitChanges();

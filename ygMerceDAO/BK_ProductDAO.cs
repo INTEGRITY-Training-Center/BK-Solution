@@ -46,6 +46,27 @@ namespace ygMerceDAO
             }
         }
 
+        public bool InsertBK_ProductByList(List<BK_ProductInfo> bklst)
+        {
+            bool b = false;
+
+            foreach(var obj in bklst)
+            {
+                try
+                {
+                    b= InsertBK_Product(obj);
+                    
+                }
+                catch (Exception ex)
+                {
+                    b = false;
+                }
+
+            }
+
+            return b;
+        }
+
         public bool InsertBK_Product(BK_ProductInfo pinfo)
         {
             try
@@ -59,9 +80,11 @@ namespace ygMerceDAO
                    
                     tbl.CategoryID = pinfo.CategoryID;
                    
-                    tbl.UMID = pinfo.UMID;
-                    tbl.BK_Price = pinfo.BK_Price;
-                   
+                    tbl.UMID = "48ec165d-d28e-4354-94d7-40636daa7d4f";
+                    tbl.BK_Price = 100.00m;
+
+                    tbl.InsertedDate = DateTime.UtcNow.AddMinutes(390).Date;
+                   tbl.UpdatedDate = DateTime.UtcNow.AddMinutes(390).Date;
                     db.BK_Products.InsertOnSubmit(tbl);
                     db.SubmitChanges();
 

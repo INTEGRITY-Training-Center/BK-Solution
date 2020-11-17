@@ -77,7 +77,7 @@ namespace ygMerceDAO
                     custbl.Name = custinfo.Name;
                     custbl.Address = custinfo.address;
                     custbl.Contact = custinfo.Contact;
-                    //custbl.CustomerPassword = custinfo.CustomerPassword;
+                    custbl.CustomerPassword = custinfo.CustomerPassword;
 
 
                     //custbl.TownshipID = custinfo.TownshipID;
