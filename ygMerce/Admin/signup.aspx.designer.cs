@@ -93,7 +93,7 @@ namespace ygMerce.Admin
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Btnconfirm1;
+        protected global::System.Web.UI.WebControls.Button Btnconfirm1;
 
         /// <summary>
         /// rptMainList control.
@@ -132,6 +132,15 @@ namespace ygMerce.Admin
         protected global::System.Web.UI.WebControls.Label lblType;
 
         /// <summary>
+        /// lblCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategory;
+
+        /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
@@ -141,40 +150,40 @@ namespace ygMerce.Admin
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
 
         /// <summary>
-        /// Div2 control.
+        /// appendtextbox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl appendtextbox1;
 
         /// <summary>
-        /// Text1 control.
+        /// txtDynamicSec0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDynamicSec0;
 
         /// <summary>
-        /// a1 control.
+        /// aButtonSec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor a1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aButtonSec;
 
         /// <summary>
-        /// a2 control.
+        /// acButtonSec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor a2;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor acButtonSec;
 
         /// <summary>
         /// Div3 control.
@@ -186,13 +195,13 @@ namespace ygMerce.Admin
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div3;
 
         /// <summary>
-        /// Button1 control.
+        /// Btnconfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Button1;
+        protected global::System.Web.UI.WebControls.Button Btnconfirm;
 
         /// <summary>
         /// txtName control.
